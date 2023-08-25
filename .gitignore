@@ -1,4 +1,7 @@
-# Security Config ignore
+# Open Api Config 
+openapi_config.js
+
+# Security Config 
 mongoDB.*
 
 # Logs

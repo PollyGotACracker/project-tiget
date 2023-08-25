@@ -29,7 +29,8 @@ import listRouter from "../routes/list.js";
 import forum from "../routes/forum.js";
 import profile from "../routes/profile.js";
 import favgGenreRouter from "../routes/favorite_genre.js";
-import spcdeInfo from "../routes/spcdeInfo.js";
+import { updateHoliday } from "../modules/holiday_info.js";
+import { scheduleJob } from "node-schedule";
 // import prfrDetail from "../routes/prfrDetail.js";
 
 // create express framework
@@ -92,7 +93,6 @@ app.use("/list", listRouter);
 app.use("/forum", forum);
 app.use("/profile", profile);
 app.use("/favoriteGenre", favgGenreRouter);
-app.use("/holiday", spcdeInfo);
 // app.use("/spotify", spotifyRouter);
 
 // catch 404 and forward to error handler
@@ -109,6 +109,16 @@ app.use((err, req, res, next) => {
   // render the error page
   res.status(err.status || 500);
   res.render("error");
+});
+
+// execute scheduler
+app.listen(process.env.PORT, async () => {
+  await updateHoliday();
+  // 서버가 켜져 있을 때 매일 자정에 실행 : 0 0 0 * * *
+  // 테스트용 5초마다 실행 : */5 * * * * *
+  scheduleJob("0 0 0 * * *", async () => {
+    await updateHoliday();
+  });
 });
 
 export default app;

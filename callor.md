@@ -1,3 +1,0 @@
-# Collaborators
-
-- callor branch Collaborators

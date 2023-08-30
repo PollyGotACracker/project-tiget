@@ -48,5 +48,5 @@ npm start
 
 ## 실행 화면(캘린더 및 추천페이지)
 
-![calendar](https://file.notion.so/f/s/0decf419-b2c8-4280-8d65-9b721a95e82c/calendar.gif?id=982790eb-3f70-4068-b1d5-91530e67a7ae&table=block&spaceId=f0e0ab15-e9ec-46c4-97fe-8808a1f369e6&expirationTimestamp=1692979200000&signature=xhBs51IHqbdiCa_OR0YtVbRadbZudcwK7n7luw3yE6E&downloadName=calendar.gif)
-![user-recommend](https://file.notion.so/f/s/9167d73b-9747-4e7b-aa46-6bb98f99f8ca/user-recommend.gif?id=6b5a46b4-ac02-40e0-96c7-178c66f1d0ee&table=block&spaceId=f0e0ab15-e9ec-46c4-97fe-8808a1f369e6&expirationTimestamp=1692979200000&signature=FgE0rw4h82-ahr5FHJfA7Y3lUqnpch47ZJzAw6NEOko&downloadName=user-recommend.gif)
+![calendar](https://github.com/PollyGotACracker/team-project-tiget/assets/92136750/369365a8-6f6c-4810-b12d-7faf409af4b7)
+![user-recommend](https://github.com/PollyGotACracker/team-project-tiget/assets/92136750/f40c6748-4c2e-4c92-8b19-abf833d15dce)

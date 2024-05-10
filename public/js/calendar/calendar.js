@@ -200,29 +200,27 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const setDateHoliday = () => {
-    const tds = Array.from(document.querySelectorAll(".date"));
-    for (let td of tds) {
-      const tdClassArr = Array.from(td.classList).map((tdClass) => {
-        if (tdClass.includes("-")) {
-          tdClass = tdClass.replaceAll("-", "");
-        }
-        return tdClass;
-      });
-
+    Array.from(tbody.querySelectorAll(".date")).forEach((td) => {
       const dateTxt = td.querySelector(".date_txt");
       const holiTxt = document.createElement("div");
       holiTxt.classList.add("holi_txt");
       td.appendChild(holiTxt);
-      for (let i of holiData) {
-        if (tdClassArr.includes(`${i.h_locdate}`)) {
-          holiTxt.textContent = i.h_dateName;
-          if (i.h_isHoliday === "Y") {
-            holiTxt.style.color = "red";
+
+      const tdDate = Array.from(td.classList)
+        .filter((className) => className.includes("-"))
+        .at(0)
+        .replaceAll("-", "");
+
+      holiData.forEach(({ h_locdate, h_dateName, h_isHoliday }) => {
+        if (tdDate === h_locdate.toString()) {
+          holiTxt.textContent = h_dateName;
+          if (h_isHoliday === "Y") {
             dateTxt.style.color = "red";
+            holiTxt.style.color = "red";
           }
         }
-      }
-    }
+      });
+    });
   };
 
   const setCalendar = () => {
